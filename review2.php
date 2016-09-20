@@ -23,6 +23,24 @@ function displayRandomCard() {
 }
 
 
+function displayHand (){
+    //parameter would be the arrays that store each player with their associated cards and total points
+
+    /*Ideas:
+      
+      I need a condition that would compare the array of the players with the cards they are associated with.
+      If the values match, the player's image would be displayed. 
+      Then the for loop would execute, and it would echo the card imagess
+      Once the for loop stops, the sum of the cards would be displayed.
+      -----------------------------------------------------------------------------------
+      Since getHand() will be using an associative array to store values, I would need to display the "key" which might be the 
+      player's name.  I'll execute a "foreach" loop that would echo the string that opens up the images. The sum could be stored as the final
+      value of the associative array. With this, I can display the current score after the deck of cards are displayed.
+      -----------------------------------------------------------------------------------
+      
+     */
+}
+
 
 function displayWinners() {
     
