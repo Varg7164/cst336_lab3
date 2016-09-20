@@ -37,7 +37,16 @@ function displayHand (){
       player's name.  I'll execute a "foreach" loop that would echo the string that opens up the images. The sum could be stored as the final
       value of the associative array. With this, I can display the current score after the deck of cards are displayed.
       -----------------------------------------------------------------------------------
-      
+      If we are using an associative array for getHand(), I might have to implement a nested-foreach loop to get access of all of the
+     
+     foreach ($fruits as $color=>$deck) {
+          // $deck is an array
+        foreach ($deck as $cards) {
+        
+            echo "<img src='img/cards/clubs/" . $cards . "png" />;
+            print "$fruit is colored $color.<br>";
+        }
+}
      */
 }
 
