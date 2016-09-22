@@ -20,6 +20,7 @@ function displayRandomCard() {
     
     echo "<img src='img/cards/clubs/" . rand(1,13). ".png' />";
     echo "<img src='img/cards/$randomSuit/" . rand(1,13). ".png' />";
+
 }
 
 
@@ -43,7 +44,7 @@ function displayHand (){
           // $deck is an array
         foreach ($deck as $cards) {
         
-            echo "<img src='img/cards/clubs/" . $cards . "png" />;
+            echo "<img src='img/cards/clubs/" . $cards . "png' />";
             print "$fruit is colored $color.<br>";
         }
 }
