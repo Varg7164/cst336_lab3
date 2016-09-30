@@ -132,54 +132,58 @@ function getHand(){
             }
         }
     }
+    
+    $f = 0;
+    
+///////used to display the scores/////////////////////////
+    
+    while ($f < 4) {
+        echo $scores[$f] . "<br/>";
+        $f++;
+    }
+    return $scores;
+/////////////////////////////////////////////////////////
 }
 
-function displayWinners() {
+function displayWinners($player_score) {
     
-    $player_name = array("mike", "scot", "Tris", "suzy");
-    $player_score = array(31, 45, 42, 39);
-    $winner = array();
-    $totalScore = 0;
+    $player_name = array("player 1", "player 2", "player 3", "player 4");
+    $winner = array(); //
+    $totalScore = 0; //adds up all scores
+    $whos_closer = 0; //keeps value of score close to 42
+    $count = 0;  //keeps reminder of array possition
     
     for ($i = 0; $i < 4; $i++) //number of players = 4
     {
         if ($player_score[$i] <= 42) //under 42
         {
             if ($player_score[$i] == 42) // exactly 42
-                $winner[$i] = 8; //keeps track of which player in array won
+                $winner[$i] = 2; //keeps track of which player in array won
  
             else {
-                $winner[$i] = 5; //puts random number to disregard player
-                $totalScore += $player_score[$i];
+                $winner[$i] = $player_score[$i]; //keeps record of score
+                $totalScore += $player_score[$i]; 
             }
         }
         else {
-            $winner[$i] = 7; //excludes the player that went over
+            $winner[$i] = null; //excludes the player that went over
             $totalScore += $player_score[$i];
         }
     }
     
-    
-    print_r($winner);
-//   print($player_score[1]);
-
-    while ($x < 4) //displays the winner and the total score
+    for ($x = 0; $x < 4; $x++) //displays the winner and the total score
     {
-        if ($winner[$x] == 8)
+        if ($winner[$x] == 2) {
             echo $player_name[$x]. " won ". $totalScore . "<br/>";
-        $x++;
-
+            return;
+        }
+        else if ($winner[$x] > $whos_closer) {
+                $whos_closer += $winner[$x]; 
+                $count = $x; 
+        }
     }
-    print_r($player1);
-    echo "    ";
-    print_r($player2);
-     echo "      ";
-    print_r($player3);
-     echo "    ";
-    print_r($player4);
-    echo "    ";
-    print_r($scores);
-    echo "Why only 1?";
+    
+    echo $player_name[$count]. " won ". $totalScore . "<br/>";
 }
 
 ?>
@@ -189,12 +193,11 @@ function displayWinners() {
 <!DOCTYPE html>
 <html>
     <head>
-        <title> </title>
+        <title>Silverjack</title>
     </head>
     <body>
         
-        <?=getHand() ?>
+        <?=displayWinners(getHand()) ?>
     
-
     </body>
 </html>
