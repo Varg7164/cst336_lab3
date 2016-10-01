@@ -164,16 +164,16 @@ function displayHand($player1){
         if ($player1[$i]>0 && $player[$i]<14){
              echo "<img src='img/cards/clubs/" .$player1[$i]. ".png' />";
         }
-        else if ($player1[$i]>=14 && $player[$i]<27){
-             $player1[$i] = ($player1[$i] -13);
+        elseif ($player1[$i]>=14 && $player[$i]<27){
+             $player1[$i]=($player1[$i]-13);
              echo "<img src='img/cards/diamonds/" .$player1[$i] . ".png' />";
         }
-        else if ($player1[$i]>=27 && $player[$i]<40){
-             $player1[$i] = ($player1[$i] - 26);
+        elseif ($player1[$i]>=27 && $player[$i]<40){
+             $player1[$i]=($player1[$i]-26);
              echo "<img src='img/cards/hearts/" .$player1[$i]. ".png' />";
         }
-        else if ($player1[$i]>=40 && $player[$i]<53){
-            $player1[$i] = ($player1[$i] - 39);
+        elseif ($player1[$i]>=40 && $player[$i]<53){
+            $player1[$i]=($player1[$i]-39);
             echo "<img src='img/cards/spades/" .$player1[$i]. ".png' />";
         }
         // echo $player1[$i] . "<br/>";
