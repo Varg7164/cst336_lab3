@@ -138,6 +138,9 @@ function getHand(){
     }
     
     displayHand($player1);
+    displayHand($player2);
+    displayHand($player3);
+    displayHand($player4);
     
     $f = 0;
     
@@ -156,29 +159,102 @@ function displayHand($player1){
     
     echo "CARD/ IMAGE NUMBER:" . "<br/>";
     
-    for ($h=0; $h<4; $h++){
-        echo $player1[$h] . "<br />";
+    for ($h=0; $h<sizeof($player1); $h++){
+        echo $player1[$h]%13 . "<br />";
     }
     
-    for ($i=0; $i<4; $i++){
-        if ($player1[$i]>0 && $player[$i]<14){
-             echo "<img src='img/cards/clubs/" .$player1[$i]. ".png' />";
+    for ($i=0; $i<sizeof($player1); $i++){
+        if ($player1[$i]>=1 && $player1[$i]<14){
+            echo "<img src='img/cards/clubs/" .($player1[$i]). ".png' />";
         }
-        elseif ($player1[$i]>=14 && $player[$i]<27){
-             $player1[$i]=($player1[$i]-13);
-             echo "<img src='img/cards/diamonds/" .$player1[$i] . ".png' />";
+        elseif ($player1[$i]>=14 && $player1[$i]<27){
+            $player1[$i]=($player1[$i]%13);
+            echo "<img src='img/cards/diamonds/" .($player1[$i]%13). ".png' />";
         }
-        elseif ($player1[$i]>=27 && $player[$i]<40){
-             $player1[$i]=($player1[$i]-26);
-             echo "<img src='img/cards/hearts/" .$player1[$i]. ".png' />";
+        elseif ($player1[$i]>=27 && $player1[$i]<40){
+            $player1[$i]=($player1[$i]%13);
+            echo "<img src='img/cards/hearts/" .($player1[$i]%13). ".png' />";
         }
-        elseif ($player1[$i]>=40 && $player[$i]<53){
-            $player1[$i]=($player1[$i]-39);
-            echo "<img src='img/cards/spades/" .$player1[$i]. ".png' />";
+        elseif ($player1[$i]>=40 && $player1[$i]<53){
+            $player1[$i]=($player1[$i]%13);
+            echo "<img src='img/cards/spades/" .($player1[$i]%13). ".png' />";
+        }
+        
+        //echo "<br />" . "----------------------------------------------" . "<br />";
+        // echo $player1[$i] . "<br/>";
+    }
+        
+    for ($h=0; $h<sizeof($player2); $h++){
+        echo $player2[$h]%13 . "<br />";
+    }
+    
+    for ($i=0; $i<sizeof($player2); $i++){
+        if ($player2[$i]>=1 && $player2[$i]<14){
+            echo "<img src='img/cards/clubs/" .($player2[$i]). ".png' />";
+        }
+        elseif ($player2[$i]>=14 && $player[$i]<27){
+            $player2[$i]=($player2[$i]%13);
+            echo "<img src='img/cards/diamonds/" .($player2[$i]%13). ".png' />";
+        }
+        elseif ($player2[$i]>=27 && $player[$i]<40){
+            $player2[$i]=($player2[$i]%13);
+            echo "<img src='img/cards/hearts/" .($player2[$i]%13). ".png' />";
+        }
+        elseif ($player2[$i]>=40 && $player[$i]<53){
+            $player2[$i]=($player2[$i]%13);
+            echo "<img src='img/cards/spades/" .($player2[$i]%13). ".png' />";
+        }
+        //echo "<br />" . "----------------------------------------------" . "<br />";
+        // echo $player1[$i] . "<br/>";
+    }
+        
+    for ($h=0; $h<sizeof($player3); $h++){
+        echo $player3[$h]%13 . "<br />";
+    }
+    
+    for ($i=0; $i<sizeof($player3); $i++){
+        if ($player3[$i]>=1 && $player3[$i]<14){
+            echo "<img src='img/cards/clubs/" .($player3[$i]). ".png' />";
+        }
+        elseif ($player3[$i]>=14 && $player3[$i]<27){
+            $player3[$i]=($player3[$i]%13);
+            echo "<img src='img/cards/diamonds/" .($player3[$i]%13). ".png' />";
+        }
+        elseif ($player3[$i]>=27 && $player3[$i]<40){
+            $player3[$i]=($player3[$i]%13);
+            echo "<img src='img/cards/hearts/" .($player3[$i]%13). ".png' />";
+        }
+        elseif ($player3[$i]>=40 && $player3[$i]<53){
+            $player3[$i]=($player3[$i]%13);
+            echo "<img src='img/cards/spades/" .($player3[$i]%13). ".png' />";
+        }
+        //echo "<br />" . "----------------------------------------------" . "<br />";
+        // echo $player1[$i] . "<br/>";
+    } 
+        
+    for ($h=0; $h<sizeof($player4); $h++){
+        echo $player4[$h]%13 . "<br />";
+    }
+    
+    for ($i=0; $i<sizeof($player4); $i++){
+        if ($player4[$i]>=1 && $player4[$i]<14){
+            echo "<img src='img/cards/clubs/" .($player4[$i]). ".png' />";
+        }
+        elseif ($player4[$i]>=14 && $player4[$i]<27){
+            $player4[$i]=($player4[$i]%13);
+            echo "<img src='img/cards/diamonds/" .($player4[$i]%13). ".png' />";
+        }
+        elseif ($player4[$i]>=27 && $player4[$i]<40){
+            $player4[$i]=($player4[$i]%13);
+            echo "<img src='img/cards/hearts/" .($player4[$i]%13). ".png' />";
+        }
+        elseif ($player4[$i]>=40 && $player4[$i]<53){
+            $player4[$i]=($player4[$i]%13);
+            echo "<img src='img/cards/spades/" .($player4[$i]%13). ".png' />";
         }
         // echo $player1[$i] . "<br/>";
     }
-        echo "<br />" . "----------------------------------------------" . "<br />";
+    echo "<br />" . "----------------------------------------------" . "<br />";
 }
 
 
@@ -190,6 +266,7 @@ function displayWinners($player_score) {
     $totalScore = 0; //adds up all scores
     $whos_closer = 0; //keeps value of score close to 42
     $count = 0;  //keeps reminder of array possition
+    $location = 0; //keeps track of what index the winnning score is in for $player_score[]
     
     for ($i = 0; $i < 4; $i++) //number of players = 4
     {
@@ -212,16 +289,18 @@ function displayWinners($player_score) {
     for ($x = 0; $x < 4; $x++) //displays the winner and the total score
     {
         if ($winner[$x] == 2) {
-            echo $player_name[$x]. " won ". $totalScore . "<br/>";
+            echo $player_name[$x]. " won ". "<br/>";// $totalScore . "<br/>";
             return;
         }
+        
         else if ($winner[$x] > $whos_closer) {
-                $whos_closer += $winner[$x]; 
-                $count = $x; 
+                $whos_closer = $winner[$x]; 
+                $count = $x;
+                $location = $x;
         }
     }
     
-    echo $player_name[$count]. " won ". $totalScore . "<br/>";
+    echo $player_name[$count]. " won ". $player_score[$location] . "<br/>";
 }
 
 
