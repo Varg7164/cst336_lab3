@@ -39,7 +39,7 @@ function getHand(){
                 
                 if($deck[$k] >= 13){
                     $temp = $deck[$k] % 13;
-                    $player1[$j] = $deck[$k];
+                    
                     $score = $score + $temp;
                 }
                 
@@ -65,7 +65,7 @@ function getHand(){
                 
                 if($deck[$k] >= 13){
                     $temp = $deck[$k] % 13;
-                    $player2[$j] = $deck[$k];
+                  
                     $score = $score + $temp;
                 }
                 
@@ -90,7 +90,7 @@ function getHand(){
                 
                 if($deck[$k] >= 13){
                     $temp = $deck[$k] % 13;
-                    $player3[$j] = $deck[$k];
+                  
                     $score = $score + $temp;
                 }
                 
@@ -116,7 +116,7 @@ function getHand(){
                 
                 if($deck[$k] >= 13){
                     $temp = $deck[$k] % 13;
-                    $player4[$j] = $deck[$k];
+                    
                     $score = $score + $temp;
                 }
                 
@@ -137,7 +137,7 @@ function getHand(){
         }
     }
     
-    // displayHand($player1, $player2, $player3, $player4);
+    displayHand($player1);
     
     $f = 0;
     
@@ -152,32 +152,33 @@ function getHand(){
     
 }
 
-function displayHand($player1, $player2, $player3, $player4){
-    /*Ideas:
-      
-      I need a condition that would compare the array of the players with the cards they are associated with.
-      If the values match, the player's image would be displayed. 
-      Then the for loop would execute, and it would echo the card imagess
-      Once the for loop stops, the sum of the cards would be displayed.
-      -----------------------------------------------------------------------------------
-      Since getHand() will be using an associative array to store values, I would need to display the "key" which might be the 
-      player's name.  I'll execute a "foreach" loop that would echo the string that opens up the images. The sum could be stored as the final
-      value of the associative array. With this, I can display the current score after the deck of cards are displayed.
-      -----------------------------------------------------------------------------------
-      If we are using an associative array for getHand(), I might have to implement a nested-foreach loop to get access of all of the*/
-     
-    //  foreach ($hand as $cards=>$deck) {
-    //       // $deck is an array
-    //     foreach ($deck as $cards) {
-        
-    //         echo "<img src='img/cards/clubs/" . $cards . "png' />";
-    //         //prints the cards of the player's hand
-    //     }
-    // }
+function displayHand($player1){
+    
+    echo "CARD/ IMAGE NUMBER:" . "<br/>";
+    
+    for ($h=0; $h<4; $h++){
+        echo $player1[$h] . "<br />";
+    }
     
     for ($i=0; $i<4; $i++){
-        echo $player1[$i] . "<br/>";
-}
+        if ($player1[$i]>0 && $player[$i]<14){
+             echo "<img src='img/cards/clubs/" .$player1[$i]. ".png' />";
+        }
+        else if ($player1[$i]>=14 && $player[$i]<27){
+             $player1[$i] = ($player1[$i] -13);
+             echo "<img src='img/cards/diamonds/" .$player1[$i] . ".png' />";
+        }
+        else if ($player1[$i]>=27 && $player[$i]<40){
+             $player1[$i] = ($player1[$i] - 26);
+             echo "<img src='img/cards/hearts/" .$player1[$i]. ".png' />";
+        }
+        else if ($player1[$i]>=40 && $player[$i]<53){
+            $player1[$i] = ($player1[$i] - 39);
+            echo "<img src='img/cards/spades/" .$player1[$i]. ".png' />";
+        }
+        // echo $player1[$i] . "<br/>";
+    }
+        echo "<br />" . "----------------------------------------------" . "<br />";
 }
 
 
