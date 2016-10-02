@@ -161,20 +161,27 @@ function displayHand($player1){
     }
     
     for ($i=0; $i<4; $i++){
-        if ($player1[$i]>0 && $player[$i]<14){
+        if ($player1[$i]>0 & $player[$i]<14){
              echo "<img src='img/cards/clubs/" .$player1[$i]. ".png' />";
+             continue;
         }
-        elseif ($player1[$i]>=14 && $player[$i]<27){
-             $player1[$i]=($player1[$i]-13);
-             echo "<img src='img/cards/diamonds/" .$player1[$i] . ".png' />";
+        else if ($player1[$i]>=14 && $player[$i]<27){
+             $player_pic=$player1[$i]-13;
+             echo "<img src='img/cards/diamonds/" .$player_pic . ".png' />";
+             continue;
         }
-        elseif ($player1[$i]>=27 && $player[$i]<40){
-             $player1[$i]=($player1[$i]-26);
-             echo "<img src='img/cards/hearts/" .$player1[$i]. ".png' />";
+        else if ($player1[$i]>=27 && $player[$i]<40){
+             $player_pic=$player1[$i]-26;
+             echo "<img src='img/cards/hearts/" .$player_pic. ".png' />";
+             continue;
         }
-        elseif ($player1[$i]>=40 && $player[$i]<53){
-            $player1[$i]=($player1[$i]-39);
-            echo "<img src='img/cards/spades/" .$player1[$i]. ".png' />";
+        else if ($player1[$i]>=40 && $player[$i]<53){
+            $player_pic=$player1[$i]-39;
+            echo "<img src='img/cards/spades/" .$player_pic. ".png' />";
+            continue;
+        }
+        else{
+            continue;
         }
         // echo $player1[$i] . "<br/>";
     }
