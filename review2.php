@@ -152,26 +152,11 @@ function getHand(){
     echo "<img src='img/players/Unknown.png' />";
     displayHand($player4);
     
-    
     $f = 0;
-    
-    ///////used to display the scores/////////////////////////
-    
-    // while ($f < 4) {
-    //     echo $scores[$f] . "<br/>";
-    //     $f++;
-    // }
-    return $scores;
-/////////////////////////////////////////////////////////
     
 }
 
 function displayHand($player1){
-    
-    // echo "CARD/ IMAGE NUMBER:" . "<br/>";
-    // for ($h=0; $h<sizeof($player1); $h++){
-    //     echo $player1[$h]%13 . "<br />";
-    // }
     
     for ($i=0; $i<sizeof($player1); $i++){
         if ($player1[$i]==0){
@@ -238,8 +223,6 @@ function displayHand($player1){
             }
             echo "<img src='img/cards/spades/" .($player2[$i]%13). ".png' />";
         }
-        //echo "<br />" . "----------------------------------------------" . "<br />";
-        // echo $player1[$i] . "<br/>";
     }
         
     for ($h=0; $h<sizeof($player3); $h++){
@@ -274,8 +257,6 @@ function displayHand($player1){
             }
             echo "<img src='img/cards/spades/" .($player3[$i]%13). ".png' />";
         }
-        //echo "<br />" . "----------------------------------------------" . "<br />";
-        // echo $player1[$i] . "<br/>";
     } 
         
     for ($h=0; $h<sizeof($player4); $h++){
