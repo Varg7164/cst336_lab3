@@ -11,8 +11,8 @@
  
  body {
      text-align: center;
-     background-image: url("../img/words.jpg");
-     background-color: green;
+     background-image: url("../img/casino-scene.jpg");
+     /*background-color: green;*/
  }
  
  h1{
@@ -22,8 +22,19 @@
      
  }
  
- main {
-     width:1200px;
+main {
+     padding: 20px;
+     width:900px;
+     height:700px;
      margin: auto;
-     background-color: rgba(211, 211, 211, 0.75)
+     background-color: rgba(255, 255, 255, 0.75);
+     
  }
+ 
+ #refresh_button{
+    background: black;
+    color: white;
+    display: inline-block;
+    padding: 10px;
+    text-decoration: none;
+}

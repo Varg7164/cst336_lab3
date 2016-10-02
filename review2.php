@@ -371,8 +371,12 @@ function displayWinners($player_score) {
         <title>Silverjack</title>
     </head>
     <body>
+        <h1> Silverjack</h1>
+        <main>
+            <?=displayWinners(getHand()) ?>
+            <a id = "refresh_button" href="javascript:history.go(0)">Play Again</a> </div>
+        </main>
         
-        <?=displayWinners(getHand()) ?>
         
     </body>
 </html>
