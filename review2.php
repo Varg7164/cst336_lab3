@@ -136,20 +136,31 @@ function getHand(){
             }
         }
     }
-    
+    echo $scores[0];
+    echo "<img src='img/players/Scott.jpg' />";
     displayHand($player1);
+    
+    echo $scores[1];
+    echo "<img src='img/players/Michael.jpg' />";
     displayHand($player2);
+    
+    echo $scores[2];
+    echo "<img src='img/players/Tristen.jpg' />";
     displayHand($player3);
+    
+    echo $scores[3];
+    echo "<img src='img/players/Unknown.png' />";
     displayHand($player4);
+    
     
     $f = 0;
     
     ///////used to display the scores/////////////////////////
     
-    while ($f < 4) {
-        echo $scores[$f] . "<br/>";
-        $f++;
-    }
+    // while ($f < 4) {
+    //     echo $scores[$f] . "<br/>";
+    //     $f++;
+    // }
     return $scores;
 /////////////////////////////////////////////////////////
     
@@ -157,13 +168,11 @@ function getHand(){
 
 function displayHand($player1){
     
-    echo "CARD/ IMAGE NUMBER:" . "<br/>";
+    // echo "CARD/ IMAGE NUMBER:" . "<br/>";
+    // for ($h=0; $h<sizeof($player1); $h++){
+    //     echo $player1[$h]%13 . "<br />";
+    // }
     
-    for ($h=0; $h<sizeof($player1); $h++){
-        echo $player1[$h]%13 . "<br />";
-    }
-    
-
     for ($i=0; $i<sizeof($player1); $i++){
         if ($player1[$i]==0){
                 continue;
@@ -356,6 +365,7 @@ function displayWinners($player_score) {
 
 
 <!DOCTYPE html>
+ <link rel = "stylesheet" href = "css/style.css" type ="text/css"> 
 <html>
     <head>
         <title>Silverjack</title>
